@@ -1,3 +1,4 @@
+console.log('Мобильная версия начинается с ширины < 769px', 'Самооценка: 140 баллов')
 const imgContainer = document.querySelector('.image_container'),
       bullets = document.querySelectorAll('#bullet'),            
       img = document.querySelector('#img'),
@@ -7,8 +8,13 @@ const imgContainer = document.querySelector('.image_container'),
 bullets.forEach((val, id) => val.addEventListener('click', slideTo.bind(this, id)));
 let currBull = 0;
 let pos = '';
+
+function animation() {
+    text.classList.remove("run-animation");
+    void text.offsetWidth;
+    text.classList.add("run-animation");
+} 
 function slideTo(slideName) {
-console.log(slideName);
 if (currBull > slideName) {
     pos = 'left';
 }
@@ -20,30 +26,24 @@ currBull = slideName;
 switch (currBull) {
     case 0:
         text.innerHTML = 'My brother when with his older friends & me try to fit in';
+        animation();
       break;
     case 1:
         text.innerHTML = 'Other Programmers & Python Programmer';
+        animation();
       break;
     case 2:
         text.innerHTML = 'Programmers looking at programming memes';
+        animation();
       break;
     case 3:
         text.innerHTML = 'Back-End Developper Doing CSS';
+        animation();
   }
-
-// let newImg = document.createElement('img');
-//     newImg.style.position = 'absolute';
-//     newImg.style.width = '1000px';  
-//     newImg.style.height = '600px';    
-//     newImg.className = `newImg${pos}`;    
-//     newImg.src = `./assets/${currBull+1}.jpg`;
-//     imgContainer.append(newImg);
-//     setTimeout(()=> newImg.style.left = '0px')
-//     newImg.addEventListener('transitionend', ()=> {
-//         img.src = newImg.src;
-//         newImg.remove()
-//     }) 
     img.src = `./assets/${currBull+1}.jpg`; 
+    img.classList.remove("run-animation");
+    void img.offsetWidth;
+    img.classList.add("run-animation");
     activeBullets.forEach((el)=> el.className = 'bullet_not_active');
     activeBullets[currBull].className = 'bullet_active';
 } 
