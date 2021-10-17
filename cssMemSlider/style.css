@@ -1,0 +1,124 @@
+body {
+    background-color: rgb(117, 122, 122);
+}
+
+.main {
+    max-width: 1000px;
+    margin: 0 auto;  
+    background-color:rgb(90, 88, 88); 
+    padding: 50px;
+}
+
+/* .container {
+
+} */
+.image_container {
+    display: flex;
+} 
+
+.meme_img {
+    width: 100%;
+    max-height: 600px;
+}
+
+.customButton {
+    width: 2rem;
+    height: 0.5rem;
+    margin: 3%;
+    cursor: pointer;
+    background-color: black;
+    opacity: .5;
+    border-radius: 0.8rem;
+    transition: all 0.4s ease;
+}
+
+#slider1 {
+    display: none;
+}
+
+.controls {
+    margin-top: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    justify-content: space-between;
+    flex-direction: row-reverse;
+}
+
+@media (max-width: 769px) {
+    .controls {
+        display: block ;        
+    }
+    .bullets_container {
+        margin-bottom: 30px;        
+        justify-content: center;
+    }
+    .main {
+        padding: 20px;
+    }
+}
+
+.text {
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+}
+
+.bullet {
+    width: 30px;
+    height: 30px;
+    margin-left: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.bullet:hover {
+    cursor: pointer;
+}
+.bullet:hover .bullet_circle {
+    background-color: white ;
+}
+
+.bullets_container {
+    display: flex;
+    flex-wrap: wrap;   
+}
+
+.bullet_active {
+    height: 12px;
+    width: 12px;
+    border-radius: 6px;
+    background-color: white;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    -ms-border-radius: 6px;
+    -o-border-radius: 6px;
+}
+
+.bullet_not_active {
+    height: 10px;
+    width: 10px;
+    border-radius: 6px;
+    background-color: white;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    -ms-border-radius: 6px;
+    -o-border-radius: 6px;
+    display: none;
+}
+
+.bullet_circle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 18px;
+    width: 18px;
+    border-radius: 15px;
+    background-color: cornflowerblue;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    -ms-border-radius: 15px;
+    -o-border-radius: 15px;
+}
+
